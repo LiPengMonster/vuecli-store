@@ -61,7 +61,7 @@ span:hover {
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       showLogin: true,
       showRegister: false,
@@ -74,8 +74,16 @@ export default {
     }
   },
   methods: {
-    login () {
+    login() {
       // 获取用户名，异步提交后台并处理返回数据
+      alert(1234)
+
+      this.$axios({
+        method: 'get',
+        url: '/login'
+      }).then(function (response) {
+        alert(response.data)
+      })
     }
   }
 }
